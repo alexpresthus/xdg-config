@@ -40,11 +40,9 @@ Neovim AppImage installation -> [github.com/neovim](https://github.com/neovim/ne
 
 # Tmux config
 
-For tmux version >3.2.
+Configured for tmux 3.3a.
 
-```
-sudo apt install tmux
-```
+Tmux AppImage installation -> [github.com/nelsonenzo/tmux-appimage](https://github.com/nelsonenzo/tmux-appimage)
 
 Install TPM (tmux plugin manager)
 ```
@@ -55,4 +53,28 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     - [tmux-plugins/tpm]("")
     - [tmux-plugins/tmux-sensible]("")
     - [rose-pine/tmux]("")
+
+# Zsh config
+
+Configured for zsh 5.8.
+
+Install zsh
+```
+sudo apt install zsh
+```
+
+Install  oh-my-zsh
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Install plugins
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+Create symlink for .zshrc
+```
+ln -s ~/.config/zsh/.zshrc ~/.zshrc
+```
 
