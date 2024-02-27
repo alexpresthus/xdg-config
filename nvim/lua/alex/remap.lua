@@ -20,6 +20,13 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set({"n", "v"}, "<Up>", "<nop>")
+vim.keymap.set({"n", "v"}, "<Down>", "<nop>")
+vim.keymap.set({"n", "v"}, "<Left>", "<nop>")
+vim.keymap.set({"n", "v"}, "<Right>", "<nop>")
+
+-- replace whitespace with newlines for visual selection
+vim.keymap.set("v", "<leader>nl", ":s/\\({\\|,\\) \\| }\\@=/\\1\\r\\t/g<CR>i<BS><ESC>")
 
 -- fugitive
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
