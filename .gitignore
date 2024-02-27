@@ -1,7 +1,8 @@
 /*
 /*/
-  !.gitignore
-  !README.md
+!.gitignore
+!README.md
 !/nvim/
-!/tmux/tmux.conf
+!/tmux/
+tmux/plugins/
 !/zsh/
