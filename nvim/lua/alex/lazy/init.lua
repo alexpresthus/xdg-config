@@ -9,7 +9,7 @@ return {
         lazy = false,
     },
     {
-        dir = '~/julian.nvim',
+        "alexpresthus/julian.nvim",
         opts = {}
     },
 }
