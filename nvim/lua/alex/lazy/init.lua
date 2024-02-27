@@ -8,5 +8,12 @@ return {
         opts = {
         },
         lazy = false,
-    }
+    },
+    {
+        dir = '~/julian.nvim',
+        lazy = false,
+        opts = {
+            name = 'Alex',
+        },
+    },
 }
