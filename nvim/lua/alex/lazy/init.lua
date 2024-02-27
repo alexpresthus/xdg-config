@@ -5,15 +5,11 @@ return {
     "github/copilot.vim",
     {
         'numToStr/Comment.nvim',
-        opts = {
-        },
+        opts = {},
         lazy = false,
     },
     {
         dir = '~/julian.nvim',
-        lazy = false,
-        opts = {
-            name = 'Alex',
-        },
+        opts = {}
     },
 }
