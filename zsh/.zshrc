@@ -4,7 +4,7 @@ ZSH_THEME="robbyrussell"
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-plugins=(git zsh-autosuggestions)
+plugins=(git ssh-agent zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
