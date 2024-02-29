@@ -23,4 +23,18 @@ return {
             end)
         end
     },
+    {
+        "sudormrfbin/cheatsheet.nvim",
+        dependencies = {
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/popup.nvim',
+            'nvim-lua/plenary.nvim'
+        },
+        opts = {
+            bundled_cheatsheets = {
+                -- only show the default cheatsheet
+                enabled = { "default" },
+            },
+        },
+    }
 }
