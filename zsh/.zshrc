@@ -33,3 +33,4 @@ else
   export EDITOR='nvim'
 fi
 
+alias n="nvim ."
