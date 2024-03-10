@@ -17,7 +17,7 @@ return {
         require("fidget").setup()
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "tsserver", "eslint" },
+            ensure_installed = { "lua_ls", "tsserver", "eslint", "gopls", "tailwindcss", "htmx", "templ", "html" },
             handlers = {
                 function(server_name)
                     local cmp_lsp = require("cmp_nvim_lsp")
@@ -52,7 +52,23 @@ return {
                         autostart = false,
                         filetypes = {"typescript"}
                     }
-                end
+                end,
+                ["html"] = function ()
+                    require("lspconfig").html.setup {
+                       filetypes = {"html", "templ"},
+                    }
+                end,
+                ["htmx"] = function ()
+                    require("lspconfig").htmx.setup {
+                       filetypes = {"html", "templ"},
+                    }
+                end,
+                ["tailwindcss"] = function ()
+                    require("lspconfig").tailwindcss.setup {
+                       filetypes = {"html", "templ", "javascript", "typescript", "react"},
+                       init_options = { userLanguages = { templ = "html" } },
+                    }
+                end,
             }
         })
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -130,4 +146,5 @@ return {
             update_in_insert = true
         })
     end,
+
 }
