@@ -27,6 +27,7 @@ PATH+=":$HOME/.yarn/bin"
 PATH+=":$HOME/go/bin"
 PATH+=":$HOME/.deno/bin"
 PATH+=":$HOME/.config/yarn/global/node_modules/.bin"
+PATH+=":$HOME/.turso"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/local/go/bin"
 PATH+=":/opt/nvim-linux64/bin"
@@ -41,3 +42,4 @@ else
 fi
 
 alias n="nvim ."
+
