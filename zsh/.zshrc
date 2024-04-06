@@ -18,6 +18,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Node options
+export NODE_OPTIONS=--max_old_space_size=4096
+
 set -a; source ~/.config/zsh/.env; set +a
 
 PATH=$PATH
@@ -28,7 +31,7 @@ PATH+=":$HOME/go/bin"
 PATH+=":$HOME/.deno/bin"
 PATH+=":$HOME/.config/yarn/global/node_modules/.bin"
 PATH+=":$HOME/.turso"
-PATH+=":`yarn global bin`"
+PATH+=":$(yarn global bin)"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/local/go/bin"
 PATH+=":/opt/nvim-linux64/bin"
