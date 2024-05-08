@@ -17,7 +17,7 @@ return {
         require("fidget").setup()
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "tsserver", "eslint", "gopls", "tailwindcss", "htmx", "templ", "html" },
+            ensure_installed = { "lua_ls", "tsserver", "gopls", "zls" },
             handlers = {
                 function(server_name)
                     local cmp_lsp = require("cmp_nvim_lsp")
