@@ -37,6 +37,7 @@ PATH+=":$(yarn global bin)"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/local/go/bin"
 PATH+=":/opt/nvim-linux64/bin"
+PATH+=":/opt/homebrew/bin"
 
 export PATH
 
