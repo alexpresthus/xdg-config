@@ -14,7 +14,7 @@ export GOBIN="$GOPATH/bin"
 export GOMODCACHE="$GOPATH/pkg/mod"
 export MANPATH="/usr/local/man:$MANPATH"
 export XDG_CONFIG_HOME="$HOME/.config"
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -33,6 +33,7 @@ PATH+=":$HOME/.config/yarn/global/node_modules/.bin"
 PATH+=":$HOME/.turso"
 PATH+=":$HOME/.cargo/env"
 PATH+=":$HOME/.zig"
+PATH+=":$HOME/Library/Python/3.9/bin"
 PATH+=":$(yarn global bin)"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/local/go/bin"
