@@ -40,10 +40,3 @@ vim.keymap.set("n", "<leader>w2", "2<C-w>w")
 vim.keymap.set("n", "<leader>w3", "3<C-w>w")
 vim.keymap.set("n", "<leader>w4", "4<C-w>w")
 
--- copilot
-vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
-    expr = true,
-    replace_keycodes = false
-})
-vim.g.copilot_no_tab_map = true
-
