@@ -65,7 +65,7 @@ return {
                 end,
                 ["tailwindcss"] = function ()
                     require("lspconfig").tailwindcss.setup {
-                        autostart: false,
+                        autostart = false,
                         filetypes = {"html", "templ", "javascript", "typescript", "react", "typescriptreact"},
                         init_options = { userLanguages = { templ = "html" } },
                     }
