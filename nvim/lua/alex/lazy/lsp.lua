@@ -17,15 +17,15 @@ return {
         require("fidget").setup()
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "tsserver", "gopls", "zls" },
+            ensure_installed = { "lua_ls", "ts_ls", "gopls", "zls", "denols" },
             handlers = {
                 function(server_name)
                     local cmp_lsp = require("cmp_nvim_lsp")
                     local capabilities = vim.tbl_deep_extend(
-                        "force",
-                        {},
-                        vim.lsp.protocol.make_client_capabilities(),
-                        cmp_lsp.default_capabilities())
+                    "force",
+                    {},
+                    vim.lsp.protocol.make_client_capabilities(),
+                    cmp_lsp.default_capabilities())
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
@@ -50,23 +50,24 @@ return {
                 ["denols"] = function ()
                     require("lspconfig").denols.setup {
                         autostart = false,
-                        filetypes = {"typescript"}
+                        filetypes = {"typescript", "typescriptreact"}
                     }
                 end,
                 ["html"] = function ()
                     require("lspconfig").html.setup {
-                       filetypes = {"html", "templ"},
+                        filetypes = {"html", "templ"},
                     }
                 end,
                 ["htmx"] = function ()
                     require("lspconfig").htmx.setup {
-                       filetypes = {"html", "templ"},
+                        filetypes = {"html", "templ"},
                     }
                 end,
                 ["tailwindcss"] = function ()
                     require("lspconfig").tailwindcss.setup {
-                       filetypes = {"html", "templ", "javascript", "typescript", "react"},
-                       init_options = { userLanguages = { templ = "html" } },
+                        autostart: false,
+                        filetypes = {"html", "templ", "javascript", "typescript", "react", "typescriptreact"},
+                        init_options = { userLanguages = { templ = "html" } },
                     }
                 end,
             }
