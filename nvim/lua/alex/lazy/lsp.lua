@@ -146,6 +146,40 @@ return {
         vim.diagnostic.config({
             update_in_insert = true
         })
-    end,
 
+        -- Define custom LSP modes
+        local lsp_modes = {
+            deno = {
+                ts_ls = {
+                    autostart = false,
+                    filetypes = {"typescript", "typescriptreact"}
+                },
+                denols = {
+                    autostart = true,
+                    filetypes = {"typescript", "typescriptreact"}
+                }
+            },
+            node = {
+                ts_ls = {
+                    autostart = true,
+                    filetypes = {"typescript", "typescriptreact"}
+                },
+                denols = {
+                    autostart = false,
+                    filetypes = {"typescript", "typescriptreact"}
+                }
+            }
+        }
+        -- Function to toggle LSP server on or off
+        local function toggle_lsp(mode)
+            for server, config in pairs(lsp_modes[mode]) do
+                require("lspconfig")[server].setup(config)
+                print("Started LSP servers in mode:", mode)
+            end
+        end
+
+        -- Key mappings for each server toggle
+        vim.keymap.set("n", "<leader>ld", function() toggle_lsp("deno") end, { noremap = true, silent = true, desc = "Set LSP mode = deno" })
+        vim.keymap.set("n", "<leader>ln", function() toggle_lsp("node") end, { noremap = true, silent = true, desc = "Set LSP mode = node" })
+    end,
 }
