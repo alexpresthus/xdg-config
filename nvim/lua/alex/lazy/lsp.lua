@@ -16,6 +16,7 @@ return {
     config = function()
         require("fidget").setup()
         require("mason").setup()
+        local util = require("lspconfig.util")
         require("mason-lspconfig").setup({
             ensure_installed = { "lua_ls", "ts_ls", "gopls", "zls", "denols" },
             handlers = {
@@ -28,6 +29,11 @@ return {
                     cmp_lsp.default_capabilities())
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
+                    }
+                end,
+                ["ts_ls"] = function ()
+                    require("lspconfig").ts_ls.setup {
+                        root_dir = util.root_pattern("tsconfig.json", "package.json", ".git"),
                     }
                 end,
                 ["lua_ls"] = function ()
